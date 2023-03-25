@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ten du an"
+        android:layout_margin="8dp"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mo ta"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="13sp"/>
+    
+    <ImageView
+        android:id="@+id/img_avata"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"/>
+    
+
+</RelativeLayout>

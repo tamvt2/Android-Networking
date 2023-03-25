@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="80dp"
+    android:orientation="vertical"
+    android:background="@drawable/img"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:textColor="#3B96F8"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edt_dk_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Username"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColorHint="#3B96F8"
+        android:padding="5dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:background="@drawable/custom_editext"/>
+
+    <EditText
+        android:id="@+id/edt_dk_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColorHint="#3B96F8"
+        android:padding="5dp"
+        android:drawableStart="@drawable/password"
+        android:background="@drawable/custom_editext"/>
+
+    <EditText
+        android:id="@+id/edt_dk_Repassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password Again"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColorHint="#3B96F8"
+        android:padding="5dp"
+        android:drawableStart="@drawable/repass"
+        android:background="@drawable/custom_editext"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Ký"
+            android:background="@drawable/custom_button"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/btn_dk_dangky"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:textStyle="bold"
+            android:background="@drawable/custom_button"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:id="@+id/btn_dk_cancel"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_dangnhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Nhập"
+        android:textStyle="bold"
+        android:textColor="#3B96F8"
+        android:textSize="19dp"
+        android:gravity="center"
+        />
+</LinearLayout>
