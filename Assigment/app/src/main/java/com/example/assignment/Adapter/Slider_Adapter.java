@@ -1,12 +1,13 @@
-package com.example.assigment.Adapter;
+package com.example.assignment.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.assigment.R;
+import androidx.recyclerview.widget.RecyclerView;
 import com.smarteist.autoimageslider.SliderViewAdapter;
+import com.example.assignment.R;
 
 public class Slider_Adapter extends SliderViewAdapter<Slider_Adapter.Holder> {
 
@@ -37,7 +38,7 @@ public class Slider_Adapter extends SliderViewAdapter<Slider_Adapter.Holder> {
         return image_slide.length;
     }
 
-    public class Holder extends ViewHolder{
+    public class Holder extends SliderViewAdapter.ViewHolder {
         ImageView  imageView;
 
         public Holder(View itemView) {

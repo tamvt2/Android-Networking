@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <FrameLayout
@@ -30,22 +30,23 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+                android:src="@drawable/backnew"/>
 
             <TextView
                 android:id="@+id/tv_namecomic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Tokyo Ghoul"
-                android:textStyle="bold"
-                android:textSize="22dp"
                 android:layout_gravity="bottom|left"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:text="Tokyo Ghoul"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold" />
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/FrameLayout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@drawable/custom_chitiet"
@@ -71,26 +72,38 @@
                 android:textStyle="italic"
                 android:text="The story follows Ken Kaneki, a student who barely survives a deadly encounter with Rize Kamishiro, his date who reveals herself as a ghoul and tries to eat him. He is taken to the hospital in critical condition."
                 android:layout_gravity="bottom|left"
+                android:layout_marginTop="25dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="4dp"/>
         </FrameLayout>
 
-        <TextView
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_doc"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="chapter"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:textSize="19dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:text="đọc truyện" />
 
-        <ListView
-            android:id="@+id/lv_chaptruyen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp" />
+        <EditText
+            android:id="@+id/edt_comment"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:background="@drawable/custom_editext"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:hint="Comment" />
+
+        <Button
+            android:id="@+id/btn_comment"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:text="Comment" />
 
         <TextView
             android:layout_width="match_parent"
@@ -106,7 +119,8 @@
         <ListView
             android:id="@+id/lv_comment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp" />
+            android:layout_height="1000dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp" />
     </LinearLayout>
 </ScrollView>

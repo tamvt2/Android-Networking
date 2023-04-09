@@ -33,6 +33,30 @@
         android:background="@drawable/custom_editext"/>
 
     <EditText
+        android:id="@+id/edt_dk_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_editext"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:gravity="center"
+        android:hint="Fullname"
+        android:padding="5dp"
+        android:textColorHint="#3B96F8" />
+
+    <EditText
+        android:id="@+id/edt_dk_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColorHint="#3B96F8"
+        android:padding="5dp"
+        android:drawableStart="@drawable/email"
+        android:background="@drawable/custom_editext"/>
+
+    <EditText
         android:id="@+id/edt_dk_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -95,7 +119,7 @@
         android:text="Đăng Nhập"
         android:textStyle="bold"
         android:textColor="#3B96F8"
-        android:textSize="19dp"
+        android:textSize="20dp"
         android:gravity="center"
         />
 </LinearLayout>

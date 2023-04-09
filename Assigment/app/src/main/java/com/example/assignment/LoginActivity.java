@@ -1,8 +1,9 @@
-package com.example.assigment;
+package com.example.assignment;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,40 +25,40 @@ import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
 
-public class RegisterActivity extends AppCompatActivity {
-    EditText edt_username, edt_password, edt_Repassword;
-    Button btn_dangky, btn_cancel;
-    TextView tv_dangnhap;
-    String url_api = "http://192.168.0.104:3000/api/register";
+public class LoginActivity extends AppCompatActivity {
+    EditText edt_username, edt_password;
+    Button btn_cancel, btn_login;
+    TextView tv_dangky;
+    public static String id = "";
+    public static String IP = "192.168.1.6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        edt_username = findViewById(R.id.edt_dk_username);
-        edt_password = findViewById(R.id.edt_dk_password);
-        edt_Repassword = findViewById(R.id.edt_dk_Repassword);
-        btn_cancel = findViewById(R.id.btn_dk_cancel);
-        btn_dangky = findViewById(R.id.btn_dk_dangky);
-        tv_dangnhap = findViewById(R.id.tv_dangnhap);
+        setContentView(R.layout.activity_login);
+        edt_username = findViewById(R.id.edt_username);
+        edt_password = findViewById(R.id.edt_password);
+        btn_login = findViewById(R.id.btn_login);
+        btn_cancel = findViewById(R.id.btn_cancel);
+        tv_dangky = findViewById(R.id.tv_dangky);
 
         btn_cancel.setOnClickListener(view -> {
             edt_username.setText("");
             edt_password.setText("");
         });
 
-        tv_dangnhap.setOnClickListener(view -> {
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        tv_dangky.setOnClickListener(view -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
 
-        btn_dangky.setOnClickListener(view -> {
+        btn_login.setOnClickListener(view -> {
             if (Validate()) {
                 DemoPostVolley();
             }
         });
     }
 
-    public void DemoPostVolley() {
+    public void DemoPostVolley(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         try {
@@ -65,23 +66,29 @@ public class RegisterActivity extends AppCompatActivity {
             JSONObject obj = new JSONObject();
             obj.put("Username", edt_username.getText().toString().trim());
             obj.put("Password", edt_password.getText().toString().trim());
+//            obj.put("RepeatPassword","1231");
             // tạo request body để gửi lên server
             final String reqBody = obj.toString();
 
             StringRequest req = new StringRequest(Request.Method.POST,
-                    url_api,
+                    "http://" + IP + ":3000/api/login",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             // Nơi dữ liệu nhận về
-                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                            if (!response.equals("null")) {
+                                id = response;
+                                Toast.makeText(getApplicationContext(), "Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Đăng nhập thất bại",Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                 }
-            }) {
+            }){
                 // phần gửi đi
                 @Override  // khai báo kiểu dữ liệu gửi lên API
                 public String getBodyContentType() {
@@ -91,8 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
                 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                 @Override // chuyển nội dung gửi thành mã byte
                 public byte[] getBody() throws AuthFailureError {
-                    if (reqBody == null)
-                        return null;
+                    if(reqBody == null)
+                        return null ;
                     else
                         return reqBody.getBytes(StandardCharsets.UTF_8);
                 }
@@ -108,9 +115,9 @@ public class RegisterActivity extends AppCompatActivity {
             };
 
             // add req vào quee
-            requestQueue.add(req);
+            requestQueue.add(req );
 
-        } catch (JSONException e) {
+        }catch (JSONException e){
             e.printStackTrace(); // ghi ra log cấu trúc lỗi
         }
     }
@@ -118,15 +125,8 @@ public class RegisterActivity extends AppCompatActivity {
     private boolean Validate() {
         String username = edt_username.getText().toString().trim();
         String password = edt_password.getText().toString().trim();
-        String repassword = edt_Repassword.getText().toString().trim();
-        if (username.isEmpty() || password.isEmpty() || repassword.isEmpty()){
+        if (username.isEmpty() || password.isEmpty()){
             Toast.makeText(getApplicationContext(),"Vui lòng không để trống thông tin",Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (password.length()<5){
-            Toast.makeText(getApplicationContext(),"Mật khẩu phải nhiều hơn 5 ký tự",Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (!password.equals(repassword)) {
-            Toast.makeText(getApplicationContext(), "Nhập lại mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

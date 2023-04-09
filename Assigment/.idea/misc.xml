@@ -3,16 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/drawable/add.xml" value="0.1" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/activity_login.xml" value="0.12158054711246201" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/activity_main.xml" value="0.14175724637681159" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/activity_noi_dung.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/activity_truyen.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/item_chap_truyen.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/item_listview.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/item_truyentranh.xml" value="0.25" />
-        <entry key="..\:/Androids/Android_Networking/Assigment/app/src/main/res/layout/slider_item.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/activity_noi_dung.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/item_chap_truyen.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/item_comment.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/item_content.xml" value="0.10989583333333333" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/item_listview.xml" value="0.10989583333333333" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/item_truyentranh.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/layout/slider_item.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/Assignment/app/src/main/res/xml/item_content.xml" value="0.24895833333333334" />
+        <entry key="..\:/Androids/Android_Networking/app/src/main/res/drawable/add.xml" value="0.1795" />
+        <entry key="..\:/Androids/Android_Networking/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Androids/Android_Networking/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
       </map>
     </option>
   </component>
